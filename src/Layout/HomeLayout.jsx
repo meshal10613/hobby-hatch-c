@@ -1,12 +1,18 @@
 import React from 'react';
-import Header from '../Components/Header';
 import { Outlet } from 'react-router';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const HomeLayout = () => {
     return (
-        <div>
-            <Header/>
-            <Outlet/>
+        <div className='text-accent'>
+            <div className='w-11/12 md:w-10/12 mx-auto'>
+                <Navbar/>
+                <div className='min-h-[calc(100vh-323px)]'>
+                    <Outlet/>
+                </div>
+            </div>
+            <Footer/>
         </div>
     );
 };
