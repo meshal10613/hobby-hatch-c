@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { use } from 'react';
 import Navbar from '../Components/Navbar';
 import { Link } from 'react-router';
+import { AuthContext } from '../Provider/AuthProvider';
+import { Bounce, toast } from 'react-toastify';
 
 const Login = () => {
+    const {SignInUser} = use(AuthContext);
     const handlLogIn = e => {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        console.log(data)
+        const {email, password} = Object.fromEntries(formData.entries());
+        SignInUser(email, password)
+        .then((result) => {
+            const user = result.user;
+            console.log(user)
+        })
+        .catch((error) => {
+            toast.error(`${error.message}`, {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            });
+        })
     }
     return (
         <div className="w-11/12 md:w-10/12 mx-auto">

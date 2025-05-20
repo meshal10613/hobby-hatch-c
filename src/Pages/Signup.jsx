@@ -2,20 +2,56 @@ import React, { use, useState } from 'react';
 import Navbar from '../Components/Navbar';
 import { Link } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
+import { Bounce, toast } from 'react-toastify';
 
 const Signup = () => {
-    const { SignUpUser } = use(AuthContext);
+    const { SignUpUser, setUser, updateUser } = use(AuthContext);
     const [error, setError] = useState("");
     const handleSignUp = (e) => {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
-        const {email, password, ...rest} = Object.fromEntries(formData.entries());
+        const {email, password, name, image} = Object.fromEntries(formData.entries());
         if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/.test(password)){
             setError("Password Requirements: \n- Minimum 6 characters \n- At least 1 uppercase letter \n- At least 1 lowercase letter \n- At least 1 number");
             return;
         }
-        
+        SignUpUser(email, password)
+        .then((result) => {
+            const user = result.user;
+            const updateProfileInfo = {displayName: name, photoURL: image}
+            updateUser(updateProfileInfo)
+            .then(() => {
+                setUser(...user, ...updateProfileInfo);
+                toast.success('Login successfully', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        transition: Bounce,
+                });
+            })
+            .then(() => {
+                setUser(user)
+            })
+        })
+        .catch((error) => {
+            toast.error(`${error.message}`, {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            });
+        })
     }
     return (
         <div className="w-11/12 md:w-10/12 mx-auto">

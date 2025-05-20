@@ -6,3 +6,5 @@
 - (React Icons)
 - (Sweet Alert)
 - (Firebase)
+- (React Toastify)
+- (React ToolTip)
