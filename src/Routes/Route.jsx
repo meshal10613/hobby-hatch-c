@@ -9,6 +9,7 @@ import PrivetRoute from '../Provider/PrivetRoute';
 import CreateGroup from '../Pages/CreateGroup';
 import MyGroups from '../Pages/MyGroups';
 import AllGroups from '../Pages/AllGroups';
+import GroupDetails from '../Pages/GroupDetails';
 
 export const router = createBrowserRouter([
     {
@@ -22,7 +23,13 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/allGroups",
+                loader: () => fetch("http://localhost:3000/hobbies"),
                 element: <AllGroups></AllGroups>
+            },
+            {
+                path: "/allGroups/:id",
+                loader: ({params}) => fetch(`http://localhost:3000/hobbies/${params.id}`),
+                element: <GroupDetails/>
             },
             {
                 path: "/createGroup",

@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Banner from '../Components/Banner';
+import Loading from './Loading';
 
 const Home = () => {
+    const [pageLoad, setPageLoad] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setPageLoad(false), 500); // simulate delay
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <div>
-            {/* <h2 className='btn bg-yellow-300'>hello</h2>
-            <h2 className='btn bg-[#302e8b]'>hello</h2>
-            <h2 className='btn bg-base-200'>hello</h2>
-            <h2 className='btn bg-base-300'>hello</h2>
-            <h2 className='btn bg-accent'>hello</h2> */}
-            <Banner/>
+            {
+                pageLoad
+                    ?   <Loading/>
+                    :   <div>
+                            <Banner/>
+                        </div>
+            }
         </div>
     );
 };
