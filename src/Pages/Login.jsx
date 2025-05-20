@@ -14,7 +14,33 @@ const Login = () => {
         SignInUser(email, password)
         .then((result) => {
             const user = result.user;
-            console.log(user)
+            const updateServerData = {
+                email: email,
+                lastSignInTime: user?.metadata?.lastSignInTime,
+            }
+            fetch("http://localhost:3000/user", {
+                method: "PATCH",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(updateServerData)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.modifiedCount){
+                    toast.success('Login successfully', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        transition: Bounce,
+                    });
+                }
+            })
         })
         .catch((error) => {
             toast.error(`${error.message}`, {

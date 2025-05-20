@@ -19,11 +19,28 @@ const Signup = () => {
         SignUpUser(email, password)
         .then((result) => {
             const user = result.user;
-            const updateProfileInfo = {displayName: name, photoURL: image}
-            updateUser(updateProfileInfo)
-            .then(() => {
-                setUser(...user, ...updateProfileInfo);
-                toast.success('Login successfully', {
+            const updateProfileInfo = {
+                displayName: name, 
+                photoURL: image,
+            };
+            const serverData = {
+                displayName: name, 
+                photoURL: image,
+                email: email,
+                creationTime: user?.metadata?.creationTime,
+                lastSignInTime: user?.metadata?.lastSignInTime,
+            };
+            fetch("http://localhost:3000/user", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(serverData)
+                })
+            .then(res => res.json())
+            .then(data => {
+                if(data.insertedId){
+                    toast.success('SignUp successfully', {
                         position: "top-right",
                         autoClose: 5000,
                         hideProgressBar: false,
@@ -33,10 +50,15 @@ const Signup = () => {
                         progress: undefined,
                         theme: "light",
                         transition: Bounce,
-                });
-            })
-            .then(() => {
-                setUser(user)
+                    });
+                    updateUser(updateProfileInfo)
+                    .then(() => {
+                        setUser(...user, ...updateProfileInfo);
+                    })
+                    .then(() => {
+                        setUser(user)
+                    })
+                }
             })
         })
         .catch((error) => {

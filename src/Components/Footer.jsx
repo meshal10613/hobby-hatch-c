@@ -5,11 +5,15 @@ const Footer = () => {
     const [email, setEmail] = useState("");
     const handleSubscribe = (e) => {
         e.preventDefault();
-        Swal.fire({
-            title: "Good job!",
-            text: `Your email ${email} has subscribe successfully`,
-            icon: "success"
-        });
+        if(email === ""){
+            return
+        }else{
+            Swal.fire({
+                title: "Good job!",
+                text: `Your email ${email} has subscribe successfully`,
+                icon: "success"
+            });
+        }
     }
     return (
         <footer className="flex justify-around items-center flex-col md:flex-row bg-neutral text-neutral-content p-20">
@@ -80,7 +84,7 @@ const Footer = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="input input-bordered join-item text-primary font-bold" required/>
-                        <button onClick={handleSubscribe} className="btn bg-primary text-secondary join-item">Subscribe</button>
+                        <button type='submit' onClick={handleSubscribe} className="btn bg-primary text-secondary join-item">Subscribe</button>
                     </div>
                 </fieldset>
             </form>
