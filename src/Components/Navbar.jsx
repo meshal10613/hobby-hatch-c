@@ -1,11 +1,12 @@
 import React, { use } from 'react';
-import { Link, NavLink } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Bounce, toast } from 'react-toastify';
 import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
     const {user, signOutUser} = use(AuthContext);
+    const navigate = useNavigate();
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/allGroups">All Groups</NavLink></li>
@@ -26,6 +27,7 @@ const Navbar = () => {
                 theme: "light",
                 transition: Bounce,
             });
+            navigate("/");
         })
         .catch((error) => {
             toast.error(`${error.message}`, {
@@ -65,11 +67,11 @@ const Navbar = () => {
             {
                 user 
                 ?   <div className='flex gap-3 items-center'>
-                        <div className='w-12 h-12 rounded-full border-black cursor-pointer' id='profile'>
+                        <div className='w-12 h-12 rounded-full cursor-pointer' id='profile'>
                             <img src={user?.photoURL} alt="" className='rounded-full border border-black'/>
                         </div>
                         <Link onClick={handleSignOut} className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary'>Logout</Link>
-                        <Tooltip anchorSelect="#profile" place="top">
+                        <Tooltip anchorSelect="#profile" place="top" className='z-10'>
                             {user?.displayName}
                         </Tooltip>
                     </div>
