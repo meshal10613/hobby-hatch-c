@@ -30,7 +30,7 @@ const AllGroups = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <Link to={`/allGroups/${data?._id}`} className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary'>See More</Link>
+                                        <Link to={`/allGroups/${data?._id}`} className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary dark:bg-secondary dark:text-accent hover:dark:bg-accent hover:dark:text-secondary'>See More</Link>
                                     </div>
                                 </div>)
                             }

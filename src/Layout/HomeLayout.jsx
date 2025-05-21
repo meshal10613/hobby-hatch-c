@@ -8,7 +8,7 @@ const HomeLayout = () => {
         <div className='text-accent'>
             <div className='w-11/12 md:w-10/12 mx-auto'>
                 <Navbar/>
-                <div className='min-h-[calc(100vh-323px)]'>
+                <div className='min-h-[calc(100vh-390px)]'>
                     <Outlet/>
                 </div>
             </div>

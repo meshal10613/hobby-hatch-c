@@ -86,7 +86,7 @@ const Navbar = () => {
                             <img
                             src={user?.photoURL} 
                             alt="" 
-                            className='w-12 h-12 rounded-full border-2 border-gray-300 cursor-pointer'
+                            className='w-12 h-12 rounded-full border border-gray-300 cursor-pointer'
                             />
                         </Link>
                         <Link onClick={handleSignOut} className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary'>Logout</Link>
@@ -95,8 +95,8 @@ const Navbar = () => {
                         </Tooltip>
                     </div>
                 :   <div className='flex gap-1'>
-                        <Link to="/login" className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary'>LogIn</Link>
-                        <Link to="/signup" className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary'>SignUp</Link>
+                        <Link to="/login" className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary dark:bg-secondary dark:text-accent hover:dark:bg-accent hover:dark:text-secondary'>LogIn</Link>
+                        <Link to="/signup" className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary dark:bg-secondary dark:text-accent hover:dark:bg-accent hover:dark:text-secondary'>SignUp</Link>
                     </div>
             }                        
             <label className="swap swap-rotate">

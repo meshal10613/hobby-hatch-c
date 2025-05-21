@@ -10,3 +10,4 @@
 - (React ToolTip)
 - (Motion)
 - (Date fns)
+- (React Typewritter)
