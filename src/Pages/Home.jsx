@@ -4,6 +4,7 @@ import Loading from './Loading';
 import CustomerReview from '../Components/CustomerReview';
 import HobbyCat from '../Components/HobbyCat';
 import GettingStarted from '../Components/GettingStarted';
+import FeatureGroups from '../Components/FeatureGroups';
 
 const Home = () => {
     const [pageLoad, setPageLoad] = useState(true);
@@ -20,6 +21,7 @@ const Home = () => {
                     ?   <Loading/>
                     :   <div>
                             <Banner/>
+                            <FeatureGroups/>
                             <GettingStarted/>
                             <HobbyCat/>
                             <CustomerReview/>

@@ -63,8 +63,8 @@ const MyGroups = () => {
                             {
                                 userData.map((data, index) => 
                                 <div key={index} className='border-2 border-gray-400 rounded-2xl mb-5 flex justify-between items-center md:px-5'>
-                                    <div className='flex gap-5 items-center justify-baseline'>
-                                        <img src={data?.image} alt="" />
+                                    <div className='flex gap-5 items-center justify-baseline py-3'>
+                                        <img src={data?.image} alt="" className='w-20 h-20 rounded-2xl'/>
                                         <div>
                                             <h2 className='font-bold text-2xl'>{data?.groupName}</h2>
                                             <p>{data?.date}</p>
