@@ -11,7 +11,7 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/allGroups">All Groups</NavLink></li>
         <li><NavLink to="/createGroup">Create Group</NavLink></li>
-        <li><NavLink to="/myGroups">My Groups</NavLink></li>
+        <li><NavLink to={`/myGroups`}>My Groups</NavLink></li>
     </>;
     const handleSignOut = () => {
         signOutUser()
@@ -67,9 +67,13 @@ const Navbar = () => {
             {
                 user 
                 ?   <div className='flex gap-3 items-center'>
-                        <div className='w-12 h-12 rounded-full cursor-pointer' id='profile'>
-                            <img src={user?.photoURL} alt="" className='rounded-full border border-black'/>
-                        </div>
+                        <Link id='profile'>
+                            <img
+                            src={user?.photoURL} 
+                            alt="" 
+                            className='w-12 h-12 rounded-full border-2 border-gray-300 cursor-pointer'
+                            />
+                        </Link>
                         <Link onClick={handleSignOut} className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary'>Logout</Link>
                         <Tooltip anchorSelect="#profile" place="top" className='z-10'>
                             {user?.displayName}

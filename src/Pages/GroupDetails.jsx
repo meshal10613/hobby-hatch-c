@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { isFuture, isToday } from "date-fns";
 import { Link, useLoaderData } from 'react-router';
+import { FaExclamationTriangle } from "react-icons/fa";
+
 
 const GroupDetails = () => {
     const data = useLoaderData();
@@ -15,7 +17,7 @@ const GroupDetails = () => {
         }
     }, [data]);
     return (
-        <div className='border-2 border-gray-400 rounded-2xl p-10'>
+        <div className='border-2 border-gray-400 rounded-2xl p-3 md:p-10 max-w-4xl mx-auto'>
             <div className='flex flex-col md:flex-row items-center gap-10 mb-5'>
                 <div className='border border-gray-400 rounded-2xl'>
                     <img src={data?.image} alt="" className='w-80'/>
@@ -31,9 +33,12 @@ const GroupDetails = () => {
                 </div>
             </div>
             <div>
-                <Link
-                    disabled={checkToday ? false : true}
-                    className={`btn btn-block bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary ${checkToday ? "cursor-pointer" : "cursor-not-allowed"}`} >Join Group</Link>
+                {
+                    checkToday
+                    ?   <Link
+                    className={`btn btn-block bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary`} >Join Group</Link>
+                    :   <p className='flex items-center justify-center gap-2 text-red-600 cursor-not-allowed'><FaExclamationTriangle />Sorry! The group is no longer active now</p>
+                }
             </div>
         </div>
     );

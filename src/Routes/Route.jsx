@@ -10,6 +10,7 @@ import CreateGroup from '../Pages/CreateGroup';
 import MyGroups from '../Pages/MyGroups';
 import AllGroups from '../Pages/AllGroups';
 import GroupDetails from '../Pages/GroupDetails';
+import UpdateGroup from '../Pages/UpdateGroup';
 
 export const router = createBrowserRouter([
     {
@@ -33,12 +34,16 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/createGroup",
-                // loader: ({params}) => fetch(`http://localhost:3000/user/${params._id}`),
                 element: <PrivetRoute><CreateGroup></CreateGroup></PrivetRoute>
             },
             {
                 path: "/myGroups",
                 element: <PrivetRoute><MyGroups></MyGroups></PrivetRoute>
+            },
+            {
+                path: "/updateGroup/:id",
+                loader: ({params}) => fetch(`http://localhost:3000/hobbies/${params.id}`),
+                element: <PrivetRoute><UpdateGroup></UpdateGroup></PrivetRoute>,
             }
         ]
     },
