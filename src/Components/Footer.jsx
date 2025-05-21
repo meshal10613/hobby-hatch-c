@@ -18,7 +18,7 @@ const Footer = () => {
         }
     }
     return (
-        <footer className="flex justify-around md:items-center flex-col md:flex-row bg-base-200 text-black pl-5 md:pl-0 md:p-20 py-10 md:py-0">
+        <footer className="flex justify-around md:items-center flex-col md:flex-row text-black pl-5 md:pl-0 md:p-20 py-10 md:py-0 dark:text-accent">
             <aside className='flex flex-col gap-3'>
                 <div>
                     <img src="/public/hobby.png" alt="" className='w-20'/>
