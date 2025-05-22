@@ -29,14 +29,14 @@ This platform addresses the growing need for offline community and social intera
 
 # NPM Packages & Important Links
 
-- (React Router)[https://reactrouter.com/home]: For Routing the project smoothly.
-- (Tailwind CSS)[https://tailwindcss.com/docs/installation/using-vite]: For faster design.
-- (Daisy UI)[https://daisyui.com/docs/install/]: For prebuild design prompt.
-- (React Icons)[https://react-icons.github.io/react-icons/]: For added social icons.
-- (Sweet Alert)[https://sweetalert2.github.io/#examples]: Using for login/logout/delete group.
-- (Firebase)[https://firebase.google.com/]: For hosting the website.
-- (React Toastify)[https://www.npmjs.com/package/react-toastify]: For showing toast after a some event done/error.
-- (Motion)[https://motion.dev/]: To get Loading spinner.
-- (Date fns)[https://www.npmjs.com/package/date-fns]: To get accurate date.
-- (React ToolTip)[https://www.npmjs.com/package/react-tooltip]: To show the name of the login user.
-- (React Typewritter)[https://www.npmjs.com/package/react-simple-typewriter]: Implement in banner.
+- [React Router](https://reactrouter.com/home): For Routing the project smoothly.
+- [Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite): For faster design.
+- [Daisy UI](https://daisyui.com/docs/install/): For prebuild design prompt.
+- [React Icons](https://react-icons.github.io/react-icons/): For added social icons.
+- [Sweet Alert](https://sweetalert2.github.io/#examples): Using for login/logout/delete group.
+- [Firebase](https://firebase.google.com/): For hosting the website.
+- [React Toastify](https://www.npmjs.com/package/react-toastify): For showing toast after a some event done/error.
+- [Motion](https://motion.dev/): To get Loading spinner.
+- [Date fns](https://www.npmjs.com/package/date-fns): To get accurate date.
+- [React ToolTip](https://www.npmjs.com/package/react-tooltip): To show the name of the login user.
+- [React Typewritter](https://www.npmjs.com/package/react-simple-typewriter): Implement in banner.
