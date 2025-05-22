@@ -7,7 +7,7 @@ const FeatureGroups = () => {
     const [userData, setUserData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/hobbies`)
+        fetch(`https://assignment-10-server-xi-fawn.vercel.app/hobbies`)
         .then(res => res.json())
         .then(data => {
             setUserData(data)

@@ -14,7 +14,7 @@ const CustomerReview = () => {
     return (
         <div className='my-20 md:my-32'>
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Members Reviews</h2>
-            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10'>
                 {
                     reviews.map((card) => 
                     <div key={card.id} className="card w-72 md:w-fit bg-gray-100 shadow-xl pt-10 mx-auto">

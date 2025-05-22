@@ -12,7 +12,7 @@ const CreateGroup = () => {
         const formData = new FormData(form);
         const allData = Object.fromEntries(formData.entries());
 
-        fetch("http://localhost:3000/hobbies", {
+        fetch("https://assignment-10-server-xi-fawn.vercel.app/hobbies", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

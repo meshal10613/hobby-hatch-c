@@ -7,7 +7,7 @@ const Banner = () => {
     return (
         <div className="carousel w-full dark:text-accent">
             <div id="slide1" className="carousel-item relative w-full bg-primary text-secondary dark:bg-primary dark:text-accent py-20">
-                <div className='space-y-5 flex flex-col items-center md:items-start justify-center px-16 md:pl-32 md:py-20'>
+                <div className='space-y-5 flex flex-col items-center md:items-start justify-center px-16 lg:pl-32 md:py-20'>
                     <h2 className='text-3xl md:text-4xl font-bold relative'>Get 20% Off On Prome Code <span className='animate-bounce absolute ml-3'>ENJOY</span></h2>
                     <p>Easily create and manage a local group. Host meetups, post updates, and grow your tribe.</p>
                     <Link to="/" className='btn bg-secondary text-primary flex gap-1 w-fit dark:text-accent dark:bg-secondary dark:border-none'>Apply</Link>
@@ -18,10 +18,11 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide2" className="carousel-item relative w-full bg-primary text-secondary py-20 dark:bg-primary dark:text-accent">
-                <div className='space-y-5 flex flex-col items-center md:items-start justify-center px-16 md:pl-32 md:py-20'>
+                <div className='space-y-5 flex flex-col items-center md:items-start justify-center px-16 lg:pl-32 md:py-20'>
                     <h2 className='text-4xl font-bold'>
+                        HobbyHatch is where hobbies meet
                         <Typewriter
-                            words={['Turn Your Hobby into a Hub.', 'HobbyHatch is where hobbies meet people.']}
+                            words={[' dreams.', ' people.']}
                             loop={0}
                             typeSpeed={70}
                             deleteSpeed={50}
@@ -37,7 +38,7 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full bg-primary text-secondary py-20 dark:bg-primary dark:text-accent">
-                <div className='space-y-5 flex flex-col items-center md:items-start justify-center px-16 md:pl-32 md:py-20'>
+                <div className='space-y-5 flex flex-col items-center md:items-start justify-center px-16 lg:pl-32 md:py-20'>
                     <h2 className='text-4xl font-bold'>Never Miss an Event Again</h2>
                     <p>Subscribe here for upcoming events & discounts</p>
                     <Link to="/" className='btn bg-secondary text-primary flex gap-1 w-fit dark:text-accent dark:bg-secondary dark:border-none'>Subscribe</Link>

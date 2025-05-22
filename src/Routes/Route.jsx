@@ -24,12 +24,12 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/allGroups",
-                loader: () => fetch("http://localhost:3000/hobbies"),
+                loader: () => fetch("https://assignment-10-server-xi-fawn.vercel.app/hobbies"),
                 element: <AllGroups></AllGroups>
             },
             {
                 path: "/allGroups/:id",
-                loader: ({params}) => fetch(`http://localhost:3000/hobbies/${params.id}`),
+                loader: ({params}) => fetch(`https://assignment-10-server-xi-fawn.vercel.app/hobbies/${params.id}`),
                 element: <GroupDetails/>
             },
             {
@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/updateGroup/:id",
-                loader: ({params}) => fetch(`http://localhost:3000/hobbies/${params.id}`),
+                loader: ({params}) => fetch(`https://assignment-10-server-xi-fawn.vercel.app/hobbies/${params.id}`),
                 element: <PrivetRoute><UpdateGroup></UpdateGroup></PrivetRoute>,
             }
         ]

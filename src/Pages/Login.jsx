@@ -1,6 +1,6 @@
 import React, { use } from 'react';
 import Navbar from '../Components/Navbar';
-import { Link, Navigate, useLocation, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Bounce, toast } from 'react-toastify';
 
@@ -21,7 +21,7 @@ const Login = () => {
                 email: email,
                 lastSignInTime: user?.metadata?.lastSignInTime,
             }
-            fetch("http://localhost:3000/user", {
+            fetch("https://assignment-10-server-xi-fawn.vercel.app/user", {
                 method: "PATCH",
                 headers: {
                     "content-type": "application/json"
@@ -42,8 +42,8 @@ const Login = () => {
                         theme: "light",
                         transition: Bounce,
                     });
-                    navigate(`${location.state ? location.state : "/"}`);
                 }
+                navigate(`${location.state ? location.state : "/"}`);
             })
         })
         .catch((error) => {
@@ -69,7 +69,7 @@ const Login = () => {
                 email: user?.email,
                 lastSignInTime: user?.metadata?.lastSignInTime,
             }
-            fetch("http://localhost:3000/user", {
+            fetch("https://assignment-10-server-xi-fawn.vercel.app/user", {
                 method: "PATCH",
                 headers: {
                     "content-type": "application/json"

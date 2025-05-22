@@ -10,7 +10,7 @@ const MyGroups = () => {
     const [userData, setUserData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/hobbies?emailParams=${user?.email}`)
+        fetch(`https://assignment-10-server-xi-fawn.vercel.app/hobbies?emailParams=${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setUserData(data)
@@ -35,7 +35,7 @@ const MyGroups = () => {
             confirmButtonText: "Yes, delete it!"
             }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/hobbies/${id}`, {
+                fetch(`https://assignment-10-server-xi-fawn.vercel.app/hobbies/${id}`, {
                     method: "DELETE",
                 })
                 .then(res => res.json())

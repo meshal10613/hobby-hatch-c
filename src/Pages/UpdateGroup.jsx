@@ -17,7 +17,7 @@ const UpdateGroup = () => {
         const form = e.target;
         const formData = new FormData(form);
         const updatedHobby = Object.fromEntries(formData.entries());
-        fetch(`http://localhost:3000/hobbies/${data._id}`, {
+        fetch(`https://assignment-10-server-xi-fawn.vercel.app/hobbies/${data._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

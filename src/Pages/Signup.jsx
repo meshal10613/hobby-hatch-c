@@ -1,13 +1,12 @@
 import React, { use, useState } from 'react';
 import Navbar from '../Components/Navbar';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Bounce, toast } from 'react-toastify';
 
 const Signup = () => {
     const { SignUpUser, setUser, updateUser, signInWithGoogle } = use(AuthContext);
     const [error, setError] = useState("");
-    const location = useLocation();
     const navigate = useNavigate();
 
     const handleSignUp = (e) => {
@@ -33,7 +32,7 @@ const Signup = () => {
                 creationTime: user?.metadata?.creationTime,
                 lastSignInTime: user?.metadata?.lastSignInTime,
             };
-            fetch("http://localhost:3000/user", {
+            fetch("https://assignment-10-server-xi-fawn.vercel.app/user", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"
@@ -57,7 +56,7 @@ const Signup = () => {
                     updateUser(updateProfileInfo)
                     .then(() => {
                         setUser(...user, ...updateProfileInfo);
-                        navigate(`${location.state ? location.state : "/"}`);
+                        navigate(`/`);
                     })
                     .then(() => {
                         setUser(user)
@@ -92,7 +91,7 @@ const Signup = () => {
                 creationTime: user?.metadata?.creationTime,
                 lastSignInTime: user?.metadata?.lastSignInTime,
             };
-            fetch("http://localhost:3000/user", {
+            fetch("https://assignment-10-server-xi-fawn.vercel.app/user", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"
@@ -113,7 +112,7 @@ const Signup = () => {
                         theme: "light",
                         transition: Bounce,
                     });
-                    navigate(`${location.state ? location.state : "/"}`);
+                    navigate("/");
                 }
             })
         })
