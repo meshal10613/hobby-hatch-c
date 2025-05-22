@@ -62,8 +62,8 @@ const MyGroups = () => {
                     :   <div>
                             {
                                 userData.map((data, index) => 
-                                <div key={index} className='border-2 border-gray-400 rounded-2xl mb-5 flex justify-between items-center md:px-5'>
-                                    <div className='flex gap-5 items-center justify-baseline py-3'>
+                                <div key={index} className='border-2 border-gray-400 rounded-2xl mb-5 flex justify-between items-center px-1 md:px-5'>
+                                    <div className='flex gap-1 md:gap-5 items-center justify-baseline py-3'>
                                         <img src={data?.image} alt="" className='w-20 h-20 rounded-2xl'/>
                                         <div>
                                             <h2 className='font-bold text-2xl'>{data?.groupName}</h2>
@@ -71,8 +71,8 @@ const MyGroups = () => {
                                             <p>{data?.description}</p>
                                         </div>
                                     </div>
-                                    <div className='flex gap-3 items-center'>
-                                        <Link to={`/updateGroup/${data?._id}`} className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary dark:bg-secondary dark:text-accent hover:dark:bg-accent hover:dark:text-secondary'>Update</Link>
+                                    <div className='flex gap-0.5 md:gap-3 items-center'>
+                                        <Link to={`/updateGroup/${data?._id}`} className='text-xs btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary dark:bg-secondary dark:text-accent hover:dark:bg-accent hover:dark:text-secondary'>Update</Link>
                                         <Link onClick={() => handleDelete(data?._id)} className='text-red-600'><MdDeleteForever size={25}/></Link>
                                     </div>
                                 </div>)
