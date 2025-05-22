@@ -1,6 +1,6 @@
 # Project Name: HobbyHatch
 
-- (Live URL)[https://assignment-10-hobby-hatch.web.app/]
+- [Live URL](https://assignment-10-hobby-hatch.web.app/)
 
 ## Project Purpose: HobbyHatch
 
