@@ -11,6 +11,7 @@ import MyGroups from '../Pages/MyGroups';
 import AllGroups from '../Pages/AllGroups';
 import GroupDetails from '../Pages/GroupDetails';
 import UpdateGroup from '../Pages/UpdateGroup';
+import Loading from '../Pages/Loading';
 
 export const router = createBrowserRouter([
     {
@@ -24,11 +25,13 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/allGroups",
+                hydrateFallbackElement: <Loading/>,
                 loader: () => fetch("https://assignment-10-server-xi-fawn.vercel.app/hobbies"),
                 element: <AllGroups></AllGroups>
             },
             {
                 path: "/allGroups/:id",
+                hydrateFallbackElement: <Loading/>,
                 loader: ({params}) => fetch(`https://assignment-10-server-xi-fawn.vercel.app/hobbies/${params.id}`),
                 element: <GroupDetails/>
             },
@@ -42,6 +45,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/updateGroup/:id",
+                hydrateFallbackElement: <Loading/>,
                 loader: ({params}) => fetch(`https://assignment-10-server-xi-fawn.vercel.app/hobbies/${params.id}`),
                 element: <PrivetRoute><UpdateGroup></UpdateGroup></PrivetRoute>,
             }
