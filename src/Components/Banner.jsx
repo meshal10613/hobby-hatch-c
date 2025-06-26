@@ -12,7 +12,7 @@ const Banner = () => {
         <div className="carousel w-full dark:text-accent">
             <div id="slide1" className={`carousel-item relative w-full text-secondary py-20 banner-1`}>
                 <div className='space-y-5 flex flex-col items-center md:items-start justify-center px-16 lg:pl-32 md:py-20'>
-                    <h2 className='text-3xl md:text-4xl font-bold relative'>Get 20% Off On Prome Code <span className='animate-bounce absolute ml-3'>ENJOY</span></h2>
+                    <h2 className='text-3xl md:text-4xl font-bold relative text-white'>Get 20% Off On Prome Code <span className='animate-bounce absolute ml-3'>ENJOY</span></h2>
                     <p>Easily create and manage a local group. Host meetups, post updates, and grow your tribe.</p>
                     <Link to="/" className='btn bg-primary text-secondary border-none flex gap-1'>Apply</Link>
                 </div>
@@ -23,7 +23,7 @@ const Banner = () => {
             </div>
             <div id="slide2" className="carousel-item relative w-full text-secondary py-20 banner-2">
                 <div className='space-y-5 flex flex-col items-center md:items-start justify-center px-16 lg:pl-32 md:py-20'>
-                    <h2 className='text-4xl font-bold'>
+                    <h2 className='text-4xl font-bold text-white'>
                         HobbyHatch is where hobbies meet
                         <Typewriter
                             words={[' dreams.', ' people.']}
@@ -43,7 +43,7 @@ const Banner = () => {
             </div>
             <div id="slide3" className="carousel-item relative w-full text-secondary py-20 banner-3">
                 <div className='space-y-5 flex flex-col items-center md:items-start justify-center px-16 lg:pl-32 md:py-20'>
-                    <h2 className='text-4xl font-bold'>Never Miss an Event Again</h2>
+                    <h2 className='text-4xl font-bold text-white'>Never Miss an Event Again</h2>
                     <p>Subscribe here for upcoming events & discounts</p>
                     <Link to="/" className='btn bg-primary text-secondary border-none flex gap-1'>Subscribe</Link>
                 </div>

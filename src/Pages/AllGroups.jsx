@@ -62,7 +62,7 @@ const AllGroups = () => {
                         </div>
                     </div>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5'>
+                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5'>
                     {
                         intData.map((data, index) => 
                             <div key={index} className="card w-fit mx-auto bg-secondary shadow-xl hover:shadow-2xl transition">

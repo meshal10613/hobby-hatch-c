@@ -55,10 +55,10 @@ const Signup = () => {
                     });
                     updateUser(updateProfileInfo)
                     .then(() => {
-                        setUser(...user, ...updateProfileInfo);
+                        setUser({...user, ...updateProfileInfo});
                         navigate(`/`);
                     })
-                    .then(() => {
+                    .catch(() => {
                         setUser(user)
                     })
                 }

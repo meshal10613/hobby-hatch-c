@@ -1,7 +1,7 @@
 import React, { use } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Bounce, toast } from 'react-toastify';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 const MyProfile = () => {
     const {user, signOutUser} = use(AuthContext);
@@ -52,16 +52,12 @@ const MyProfile = () => {
                 {/* Info Section */}
                 <div className="mt-6 space-y-3 text-center sm:text-left sm:pl-6">
                     <p className="text-base-content"><span className="font-semibold">Email:</span> {user?.email}</p>
-                    {
-                        user?.phone &&
-                        <p className="text-base-content"><span className="font-semibold">Phone:</span> {user?.phone}</p>
-                    }
                 </div>
 
                 {/* Buttons */}
-                <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center sm:justify-end">
-                    <button className="btn btn-primary w-full sm:w-auto">Edit Profile</button>
-                    <button onClick={handleSignOut} className="btn btn-outline btn-error w-full sm:w-auto">Log Out</button>
+                <div className="mt-8">
+                    <button onClick={handleSignOut} className="btn btn-outline btn-error w-full">Log Out</button>
+                    {/* <Link to="/dashboard/edit-profile" className="btn btn-primary w-full sm:w-auto">Edit Profile</Link> */}
                 </div>
             </div>
         </div>

@@ -21,7 +21,7 @@ const Navbar = () => {
         <li><NavLink to="/support" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Support</NavLink></li>
         {
             user && 
-            <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+            <li><NavLink to="/dashboard/home">Dashboard</NavLink></li>
         }
     </>;
 
