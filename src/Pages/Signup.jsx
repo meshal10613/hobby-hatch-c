@@ -166,7 +166,7 @@ const Signup = () => {
                 }
 
                 <button type="submit"
-                    className="btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary w-full my-3">
+                    className='btn bg-primary text-secondary border-none btn-block'>
                     Signup
                 </button>
                 </form>

@@ -6,7 +6,7 @@ import Footer from '../Components/Footer';
 const HomeLayout = () => {
     return (
         <div className='text-accent'>
-            <div className='w-11/12 md:w-10/12 mx-auto'>
+            <div className='w-full 2xl:w-11/12 mx-auto'>
                 <Navbar/>
                 <div className='min-h-[calc(100vh-390px)]'>
                     <Outlet/>

@@ -72,7 +72,7 @@ const MyGroups = () => {
                                         </div>
                                     </div>
                                     <div className='flex gap-0.5 md:gap-3 items-center'>
-                                        <Link to={`/updateGroup/${data?._id}`} className='text-xs btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary dark:bg-secondary dark:text-accent hover:dark:bg-accent hover:dark:text-secondary'>Update</Link>
+                                        <Link to={`/updateGroup/${data?._id}`} className='btn bg-primary text-secondary border-none'>Update</Link>
                                         <Link onClick={() => handleDelete(data?._id)} className='text-red-600'><MdDeleteForever size={25}/></Link>
                                     </div>
                                 </div>)

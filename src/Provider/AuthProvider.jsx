@@ -7,7 +7,16 @@ export const AuthContext = createContext(null)
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const googleProvider = new GoogleAuthProvider();    
+    const googleProvider = new GoogleAuthProvider();  
+    
+    //theme
+    const [theme, setTheme] = useState("light");
+
+    const toggleTheme = () => {
+        const newTheme = theme === "light" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        setTheme(newTheme);
+    };
 
     const SignInUser = (email, password) => {
         setLoading(true);
@@ -50,6 +59,9 @@ const AuthProvider = ({children}) => {
         updateUser,
         signOutUser,
         signInWithGoogle,
+        theme,
+        setTheme,
+        toggleTheme
     }
 
     return (

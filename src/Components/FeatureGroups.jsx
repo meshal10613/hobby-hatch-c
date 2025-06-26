@@ -33,7 +33,7 @@ const FeatureGroups = () => {
                                     <h2 className="card-title">{item?.groupName}</h2>
                                     <p>{item?.description}</p>
                                     <div className="card-actions">
-                                        <Link to={`/allGroups/${item?._id}`} className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary dark:bg-secondary dark:text-accent hover:dark:bg-accent hover:dark:text-secondary'>See More</Link>
+                                        <Link to={`/allGroups/${item?._id}`} className='btn bg-primary text-secondary border-none'>See More</Link>
                                     </div>
                                 </div>
                             </div>

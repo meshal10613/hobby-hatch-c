@@ -12,6 +12,12 @@ import AllGroups from '../Pages/AllGroups';
 import GroupDetails from '../Pages/GroupDetails';
 import UpdateGroup from '../Pages/UpdateGroup';
 import Loading from '../Pages/Loading';
+import AboutUs from '../Pages/Basic/AboutUs';
+import Support from '../Pages/Basic/Support';
+import Contact from '../Pages/Basic/Contact';
+import DashboardLayout from '../Layout/DashboardLayout';
+import DashboardHome from '../Pages/Dashboard/DashboardHome';
+import MyProfile from '../Pages/Dashboard/MyProfile';
 
 export const router = createBrowserRouter([
     {
@@ -22,6 +28,18 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home/>
+            },
+            {
+                path: "/about-us",
+                element: <AboutUs/>
+            },
+            {
+                path: "/support",
+                element: <Support/>
+            },
+            {
+                path: "/contact",
+                element: <Contact/>
             },
             {
                 path: "/allGroups",
@@ -48,6 +66,20 @@ export const router = createBrowserRouter([
                 hydrateFallbackElement: <Loading/>,
                 loader: ({params}) => fetch(`https://assignment-10-server-xi-fawn.vercel.app/hobbies/${params.id}`),
                 element: <PrivetRoute><UpdateGroup></UpdateGroup></PrivetRoute>,
+            }
+        ]
+    },
+    {
+        path: "/dashboard",
+        element: <DashboardLayout/>,
+        children: [
+            {
+                path: 'home',
+                element: <DashboardHome/>
+            },
+            {
+                path: "my-profile",
+                element: <MyProfile/>
             }
         ]
     },

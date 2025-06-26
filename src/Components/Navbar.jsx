@@ -1,17 +1,32 @@
-import React, { use, useState } from 'react';
+import React, { use } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Bounce, toast } from 'react-toastify';
 import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
-    const {user, signOutUser} = use(AuthContext);
+    const {user, signOutUser, theme, toggleTheme} = use(AuthContext);
     const navigate = useNavigate();
+      // Set color depending on theme
+    const primaryColor = theme === "light" ? "#1e8312" : "#9ff198";
+
+    const activeStyle = {
+        background: primaryColor,
+        color: "white"
+        // fontWeight: "bold",
+    };
     const links = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/allGroups">All Groups</NavLink></li>
-        <li><NavLink to="/createGroup">Create Group</NavLink></li>
-        <li><NavLink to={`/myGroups`}>My Groups</NavLink></li>
+        <li><NavLink to="/" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Home</NavLink></li>
+        <li><NavLink to="/allGroups" style={({ isActive }) => (isActive ? activeStyle : undefined)}>All Groups</NavLink></li>
+        <li><NavLink to="/about-us" style={({ isActive }) => (isActive ? activeStyle : undefined)}>About us</NavLink></li>
+        <li><NavLink to="/contact" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Contact</NavLink></li>
+        <li><NavLink to="/support" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Support</NavLink></li>
+        {
+            user && 
+            <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+        }
+        {/* <li><NavLink to="/createGroup">Create Group</NavLink></li>
+        <li><NavLink to={`/myGroups`}>My Groups</NavLink></li> */}
     </>;
     const handleSignOut = () => {
         signOutUser()
@@ -44,22 +59,8 @@ const Navbar = () => {
         })
     };
 
-    const [theme, setTheme] = useState(true);
-
-    const handleToggle = () => {
-        if(theme === true){
-            setTheme(false);
-            const localTheme = "dark";
-            document.querySelector('html').setAttribute("data-theme", localTheme);
-        }else{
-            setTheme(true);
-            const localTheme = "light";
-            document.querySelector('html').setAttribute("data-theme", localTheme);
-        }
-    }
-
     return (
-    <div className="navbar my-5">
+    <div className="navbar sticky top-0 z-50 bg-secondary mb-5">
         <div className="navbar-start">
             <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -90,18 +91,18 @@ const Navbar = () => {
                             className='w-12 h-12 rounded-full border border-gray-300 cursor-pointer'
                             />
                         </Link>
-                        <Link onClick={handleSignOut} className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary'>Logout</Link>
+                        <Link onClick={handleSignOut} className='btn bg-primary text-secondary border-none'>Logout</Link>
                         <Tooltip anchorSelect="#profile" place="top" className='z-10'>
                             {user?.displayName}
                         </Tooltip>
                     </div>
                 :   <div className='flex gap-1'>
-                        <Link to="/login" className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary dark:bg-secondary dark:text-accent hover:dark:bg-accent hover:dark:text-secondary'>LogIn</Link>
-                        <Link to="/signup" className='btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary dark:bg-secondary dark:text-accent hover:dark:bg-accent hover:dark:text-secondary hidden md:flex'>SignUp</Link>
+                        <Link to="/login" className='btn bg-primary text-secondary border-none'>LogIn</Link>
+                        <Link to="/signup" className='btn bg-primary text-secondary border-none'>SignUp</Link>
                     </div>
             }                        
             <label className="swap swap-rotate">
-                <input type="checkbox" className="theme-controller" value="synthwave" onChange={() => handleToggle()}/>
+                <input type="checkbox" className="theme-controller" value="synthwave" onClick={toggleTheme}/>
                 <svg
                     className="swap-off h-10 w-10 fill-current"
                     xmlns="http://www.w3.org/2000/svg"

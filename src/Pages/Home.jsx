@@ -23,6 +23,7 @@ const Home = () => {
                             <Banner/>
                             <FeatureGroups/>
                             <GettingStarted/>
+                            {/* offer & promotional page */}
                             <HobbyCat/>
                             <CustomerReview/>
                         </div>

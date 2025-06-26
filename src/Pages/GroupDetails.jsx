@@ -36,7 +36,7 @@ const GroupDetails = () => {
                 {
                     checkToday
                     ?   <Link
-                    className={`btn btn-block bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary  dark:bg-secondary dark:text-accent hover:dark:bg-accent hover:dark:text-secondary`} >Join Group</Link>
+                    className='btn bg-primary text-secondary border-none' >Join Group</Link>
                     :   <p className='flex items-center justify-center gap-2 text-red-600 cursor-not-allowed'><FaExclamationTriangle />Sorry! The group is no longer active now</p>
                 }
             </div>

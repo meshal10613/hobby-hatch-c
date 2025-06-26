@@ -125,7 +125,7 @@ const Login = () => {
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold" />
                     </div>
                     <button type="submit"
-                        className="btn bg-primary text-secondary transition-all hover:text-primary hover:bg-secondary w-full mt-3">
+                        className='btn bg-primary text-secondary border-none btn-block'>
                         Login
                     </button>
                 </form>
