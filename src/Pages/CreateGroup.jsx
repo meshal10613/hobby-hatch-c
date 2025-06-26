@@ -60,13 +60,26 @@ const CreateGroup = () => {
                                         <select defaultValue="Pick a color" name='hobby' className="select w-full" required>
                                             <option disabled={true}>Select a category</option>
                                             <option>Drawing & Painting</option>
-                                            <option>Photography</option>
                                             <option>Video Gaming</option>
-                                            <option>Fishing</option>
                                             <option>Running</option>
-                                            <option>Cooking</option>
                                             <option>Reading</option>
                                             <option>Writing </option>
+                                            <option>Photography</option>
+                                            <option>Gardening</option>
+                                            <option>Cooking</option>
+                                            <option>Hiking</option>
+                                            <option>Traveling</option>
+                                            <option>Fishing</option>
+                                            <option>Cycling</option>
+                                            <option>Swimming</option>
+                                            <option>Dancing</option>
+                                            <option>Singing</option>
+                                            <option>Knitting</option>
+                                            <option>Yoga</option>
+                                            <option>Playing Guitar</option>
+                                            <option>Chess</option>
+                                            <option>Blogging</option>
+                                            <option>Coding</option>
                                         </select>
                                     </div>
                                     <div className='flex flex-col'>
@@ -102,7 +115,7 @@ const CreateGroup = () => {
                                         <input type='text' value={user?.email} name='email' className="input w-full" readOnly/>
                                     </div>
                                 </div>
-                                <button type='submit' className='btn bg-primary text-secondary border-none'>Create Group</button>
+                                <button type='submit' className='btn bg-primary text-secondary border-none my-3'>Create Group</button>
                             </form>
                         </div>
                     </div>

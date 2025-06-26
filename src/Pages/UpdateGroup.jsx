@@ -51,14 +51,27 @@ const UpdateGroup = () => {
                                 <label className="label">Hobby Category</label>
                                 <select defaultValue={hobbyCategory} onChange={(e) => sethobbyCategory(e.target.value)} name='hobby' className="select w-full" required>
                                     <option disabled={true}>Select a category</option>
-                                    <option>Drawing & Painting</option>
-                                    <option>Photography</option>
-                                    <option>Video Gaming</option>
-                                    <option>Fishing</option>
-                                    <option>Running</option>
-                                    <option>Cooking</option>
-                                    <option>Reading</option>
-                                    <option>Writing </option>
+                                        <option>Drawing & Painting</option>
+                                        <option>Video Gaming</option>
+                                        <option>Running</option>
+                                        <option>Reading</option>
+                                        <option>Writing </option>
+                                        <option>Photography</option>
+                                        <option>Gardening</option>
+                                        <option>Cooking</option>
+                                        <option>Hiking</option>
+                                        <option>Traveling</option>
+                                        <option>Fishing</option>
+                                        <option>Cycling</option>
+                                        <option>Swimming</option>
+                                        <option>Dancing</option>
+                                        <option>Singing</option>
+                                        <option>Knitting</option>
+                                        <option>Yoga</option>
+                                        <option>Playing Guitar</option>
+                                        <option>Chess</option>
+                                        <option>Blogging</option>
+                                        <option>Coding</option>
                                 </select>
                             </div>
                             <div className='flex flex-col'>

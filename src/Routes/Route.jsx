@@ -27,6 +27,8 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
+                hydrateFallbackElement: <Loading/>,
+                loader: () => fetch("https://assignment-10-server-xi-fawn.vercel.app/hobbies?hobby=hobby"),
                 element: <Home/>
             },
             {
@@ -43,8 +45,6 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/allGroups",
-                hydrateFallbackElement: <Loading/>,
-                loader: () => fetch("https://assignment-10-server-xi-fawn.vercel.app/hobbies"),
                 element: <AllGroups></AllGroups>
             },
             {
@@ -53,25 +53,11 @@ export const router = createBrowserRouter([
                 loader: ({params}) => fetch(`https://assignment-10-server-xi-fawn.vercel.app/hobbies/${params.id}`),
                 element: <GroupDetails/>
             },
-            {
-                path: "/createGroup",
-                element: <PrivetRoute><CreateGroup></CreateGroup></PrivetRoute>
-            },
-            {
-                path: "/myGroups",
-                element: <PrivetRoute><MyGroups></MyGroups></PrivetRoute>
-            },
-            {
-                path: "/updateGroup/:id",
-                hydrateFallbackElement: <Loading/>,
-                loader: ({params}) => fetch(`https://assignment-10-server-xi-fawn.vercel.app/hobbies/${params.id}`),
-                element: <PrivetRoute><UpdateGroup></UpdateGroup></PrivetRoute>,
-            }
         ]
     },
     {
         path: "/dashboard",
-        element: <DashboardLayout/>,
+        element: <PrivetRoute><DashboardLayout/></PrivetRoute>,
         children: [
             {
                 path: 'home',
@@ -80,6 +66,20 @@ export const router = createBrowserRouter([
             {
                 path: "my-profile",
                 element: <MyProfile/>
+            },
+            {
+                path: "createGroup",
+                element: <PrivetRoute><CreateGroup></CreateGroup></PrivetRoute>
+            },
+            {
+                path: "myGroups",
+                element: <PrivetRoute><MyGroups></MyGroups></PrivetRoute>
+            },
+            {
+                path: "updateGroup/:id",
+                hydrateFallbackElement: <Loading/>,
+                loader: ({params}) => fetch(`https://assignment-10-server-xi-fawn.vercel.app/hobbies/${params.id}`),
+                element: <PrivetRoute><UpdateGroup></UpdateGroup></PrivetRoute>,
             }
         ]
     },

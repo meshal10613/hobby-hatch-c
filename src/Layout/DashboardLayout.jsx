@@ -2,6 +2,10 @@ import React, { use, useState } from 'react';
 import { FaBoxOpen, FaHome } from 'react-icons/fa';
 import { Link, NavLink, Outlet } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
+import { RxDashboard } from 'react-icons/rx';
+import { IoCreate } from 'react-icons/io5';
+import { CgProfile } from 'react-icons/cg';
+import { FaUserGroup } from 'react-icons/fa6';
 
 const DashboardLayout = () => {
     const {theme, user} = use(AuthContext);
@@ -65,14 +69,29 @@ const DashboardLayout = () => {
                 <ul className="menu bg-secondary text-base-content min-h-full w-80 p-4 main-link">
                     {/* Sidebar content here */}
                     <li>
-                        <NavLink to="/dashboard/home" onClick={() => setTitle("Dashboard")} style={({ isActive }) => (isActive ? (activeStyle) : undefined)} className={linkClass} >
+                        <NavLink to="/" onClick={() => setTitle("Dashboard")} style={({ isActive }) => (isActive ? (activeStyle) : undefined)} className={linkClass} >
                             <FaHome className="inline-block mr-2"/>
+                            Home
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/dashboard/home" onClick={() => setTitle("Dashboard")} style={({ isActive }) => (isActive ? (activeStyle) : undefined)} className={linkClass} >
+                            <RxDashboard className="inline-block mr-2"/>
                             Dashboard
                         </NavLink>
                     </li>
                     <li>
+                        <NavLink to="/dashboard/createGroup" onClick={() => setTitle("My Profile")} style={({ isActive }) => (isActive ? activeStyle : undefined)}>
+                            <IoCreate className="inline-block mr-2"/>Create Group
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={`/dashboard/myGroups`} onClick={() => setTitle("My Profile")} style={({ isActive }) => (isActive ? activeStyle : undefined)}>
+                        <FaUserGroup className='inline-block mr-2' />My Groups</NavLink>
+                    </li>
+                    <li>
                         <NavLink to="/dashboard/my-profile" onClick={() => setTitle("My Profile")} style={({ isActive }) => (isActive ? activeStyle : undefined)} >
-                            <FaBoxOpen className="inline-block mr-2" />
+                            <CgProfile  className="inline-block mr-2" />
                             My Profile
                         </NavLink>
                     </li>

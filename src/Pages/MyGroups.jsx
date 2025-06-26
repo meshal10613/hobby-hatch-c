@@ -1,8 +1,7 @@
 import React, { use, useEffect, useState } from 'react';
-import Loading from './Loading';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Link } from 'react-router';
-import { MdDeleteForever } from 'react-icons/md';
+import { MdDeleteForever, MdOutlineSystemUpdateAlt } from 'react-icons/md';
 import Swal from 'sweetalert2';
 
 const MyGroups = () => {
@@ -16,13 +15,6 @@ const MyGroups = () => {
             setUserData(data)
         })
     }, [user])
-
-    const [pageLoad, setPageLoad] = useState(true);
-
-    useEffect(() => {
-        const timer = setTimeout(() => setPageLoad(false), 500); // simulate delay
-        return () => clearTimeout(timer);
-    }, []);
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -53,31 +45,30 @@ const MyGroups = () => {
                 })
             }
         });
-    }
+    };
+
     return (
-        <div>
+        <div className='mx-5'>
             {
-                pageLoad
-                    ?   <Loading/>
-                    :   <div>
-                            {
-                                userData.map((data, index) => 
-                                <div key={index} className='border-2 border-gray-400 rounded-2xl mb-5 flex justify-between items-center px-1 md:px-5'>
-                                    <div className='flex gap-1 md:gap-5 items-center justify-baseline py-3'>
-                                        <img src={data?.image} alt="" className='w-20 h-20 rounded-2xl'/>
-                                        <div>
-                                            <h2 className='font-bold text-2xl'>{data?.groupName}</h2>
-                                            <p>{data?.date}</p>
-                                            <p>{data?.description}</p>
-                                        </div>
-                                    </div>
-                                    <div className='flex gap-0.5 md:gap-3 items-center'>
-                                        <Link to={`/updateGroup/${data?._id}`} className='btn bg-primary text-secondary border-none'>Update</Link>
-                                        <Link onClick={() => handleDelete(data?._id)} className='text-red-600'><MdDeleteForever size={25}/></Link>
-                                    </div>
-                                </div>)
-                            }
+                userData.map((data, index) => 
+                <div key={index} className='border-2 border-gray-400 rounded-2xl mb-5 flex justify-between items-center px-1 md:px-5'>
+                    <div className='flex gap-1 md:gap-5 items-center justify-baseline py-3'>
+                        <img src={data?.image} alt="" className='w-20 h-20 rounded-2xl'/>
+                        <div>
+                            <h2 className='font-bold text-2xl'>{data?.groupName}</h2>
+                            <p>{data?.date}</p>
+                            <p>{data?.description}</p>
                         </div>
+                    </div>
+                    <div className='flex gap-2 items-center'>
+                        <Link to={`/dashboard/updateGroup/${data?._id}`} className='tooltip tooltip-bottom' data-tip="Edit">
+                            <MdOutlineSystemUpdateAlt size={25}/>
+                        </Link>
+                        <Link onClick={() => handleDelete(data?._id)} className='text-red-600 tooltip tooltip-bottom' data-tip="Edit">
+                            <MdDeleteForever size={25}/>
+                        </Link>
+                    </div>
+                </div>)
             }
         </div>
     );

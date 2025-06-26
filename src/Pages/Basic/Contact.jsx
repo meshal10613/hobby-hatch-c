@@ -26,7 +26,7 @@ const Contact = () => {
                     <textarea className="textarea textarea-bordered w-full" rows="6" placeholder="Your message"></textarea>
                     </div>
                     <div className="flex justify-center">
-                    <button className="btn btn-primary w-full sm:w-auto">Send Message</button>
+                    <button className="btn btn-primary text-secondary w-full sm:w-auto">Send Message</button>
                     </div>
                 </form>
             </div>

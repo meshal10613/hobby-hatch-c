@@ -133,30 +133,30 @@ const Signup = () => {
     return (
         <div className="w-11/12 md:w-10/12 mx-auto">
             <Navbar/>
-            <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-md mx-auto mt-20">
+            <div className="w-full max-w-md bg-secondary p-8 rounded-xl shadow-md mx-auto mt-20">
                 <h2 className="text-2xl font-semibold text-center mb-6">Signup to HobbyHub</h2>
 
                 <form onSubmit={handleSignUp} className="space-y-2">
                 <div>
-                    <label className="block mb-1 text-sm font-medium text-gray-700">Name</label>
+                    <label className="block mb-1 text-sm font-medium">Name</label>
                     <input type="text" name="name" placeholder='Enter Your Name' required
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold" />
                 </div>
 
                 <div>
-                    <label className="block mb-1 text-sm font-medium text-gray-700">Image</label>
+                    <label className="block mb-1 text-sm font-medium">Image</label>
                     <input type="text" name="image" placeholder='Enter Your Image' required
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold" />
                 </div>
 
                 <div>
-                    <label className="block mb-1 text-sm font-medium text-gray-700">Email</label>
+                    <label className="block mb-1 text-sm font-medium">Email</label>
                     <input type="email" name="email" placeholder='Enter Your Email' required
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold" />
                 </div>
 
                 <div>
-                    <label className="block mb-1 text-sm font-medium text-gray-700">Password</label>
+                    <label className="block mb-1 text-sm font-medium">Password</label>
                     <input type="password" name="password" placeholder='Enter Your Password' required
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold" />
                 </div>
@@ -171,9 +171,9 @@ const Signup = () => {
                 </button>
                 </form>
 
-                <p className="text-center text-sm text-gray-600 mt-4">
+                <p className="text-sm mt-4">
                 Don't have an account?
-                <Link to="/login" className="text-primary hover:underline">Login</Link>
+                <Link to="/login" className="text-primary hover:underline"> Login</Link>
                 </p>
                 <div className="divider">Or</div>
                 <div className='flex flex-col gap-2'>

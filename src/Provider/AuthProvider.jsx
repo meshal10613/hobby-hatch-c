@@ -7,6 +7,7 @@ export const AuthContext = createContext(null)
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [search, setSearch] = useState("");
     const googleProvider = new GoogleAuthProvider();  
     
     //theme
@@ -61,7 +62,9 @@ const AuthProvider = ({children}) => {
         signInWithGoogle,
         theme,
         setTheme,
-        toggleTheme
+        toggleTheme,
+        search,
+        setSearch
     }
 
     return (

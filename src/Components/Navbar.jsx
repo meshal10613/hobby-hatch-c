@@ -1,12 +1,10 @@
 import React, { use } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
-import { Bounce, toast } from 'react-toastify';
 import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
-    const {user, signOutUser, theme, toggleTheme} = use(AuthContext);
-    const navigate = useNavigate();
+    const {user, theme, toggleTheme} = use(AuthContext);
       // Set color depending on theme
     const primaryColor = theme === "light" ? "#1e8312" : "#9ff198";
 
@@ -25,39 +23,7 @@ const Navbar = () => {
             user && 
             <li><NavLink to="/dashboard">Dashboard</NavLink></li>
         }
-        {/* <li><NavLink to="/createGroup">Create Group</NavLink></li>
-        <li><NavLink to={`/myGroups`}>My Groups</NavLink></li> */}
     </>;
-    const handleSignOut = () => {
-        signOutUser()
-        .then(() => {
-            toast.success('Logout successfully', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: false,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                transition: Bounce,
-            });
-            navigate("/");
-        })
-        .catch((error) => {
-            toast.error(`${error.message}`, {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: false,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                transition: Bounce,
-            });
-        })
-    };
 
     return (
     <div className="navbar sticky top-0 z-50 bg-secondary mb-5">
@@ -83,7 +49,7 @@ const Navbar = () => {
             {
                 user 
                 ?   <div className='flex gap-3 items-center'>
-                        <Link id='profile'>
+                        <Link to="/dashboard/my-profile" id='profile'>
                             <img
                             src={user?.photoURL} 
                             referrerPolicy='no-referrer'
@@ -91,7 +57,6 @@ const Navbar = () => {
                             className='w-12 h-12 rounded-full border border-gray-300 cursor-pointer'
                             />
                         </Link>
-                        <Link onClick={handleSignOut} className='btn bg-primary text-secondary border-none'>Logout</Link>
                         <Tooltip anchorSelect="#profile" place="top" className='z-10'>
                             {user?.displayName}
                         </Tooltip>

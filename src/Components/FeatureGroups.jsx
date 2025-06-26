@@ -19,10 +19,10 @@ const FeatureGroups = () => {
     return (
         <div>
             <h2 className="text-3xl md:text-4xl font-bold my-8 text-center">Feature Groups</h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-fit mx-auto my-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-fit mx-auto my-8'>
                 {
                     displayedItems.map((item, index) => 
-                            <div key={index} className="card bg-base-100 w-88 shadow-sm">
+                            <div key={index} className="card bg-secondary w-88 shadow-sm">
                                 <figure className="px-10 pt-10">
                                     <img
                                     src={item?.image}

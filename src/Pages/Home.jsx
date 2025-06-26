@@ -5,6 +5,7 @@ import CustomerReview from '../Components/CustomerReview';
 import HobbyCat from '../Components/HobbyCat';
 import GettingStarted from '../Components/GettingStarted';
 import FeatureGroups from '../Components/FeatureGroups';
+import WeHave from '../Components/WeHave';
 
 const Home = () => {
     const [pageLoad, setPageLoad] = useState(true);
@@ -21,6 +22,7 @@ const Home = () => {
                     ?   <Loading/>
                     :   <div>
                             <Banner/>
+                            <WeHave/>
                             <FeatureGroups/>
                             <GettingStarted/>
                             {/* offer & promotional page */}

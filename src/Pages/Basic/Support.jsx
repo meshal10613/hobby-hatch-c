@@ -4,7 +4,7 @@ const Support = () => {
     return (
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-primary text-center">Support</h1>
-        <p className="text-gray-700 text-base sm:text-lg mb-6 text-justify">
+        <p className="text-secondary sm:text-lg mb-6 text-justify">
             Need help or have questions? We’re here to assist you! Below are some common support topics and how you can reach out.
         </p>
 
@@ -27,7 +27,7 @@ const Support = () => {
                 <input type="checkbox" />
                 <div className="collapse-title text-lg font-medium">{item.q}</div>
                 <div className="collapse-content">
-                <p>{item.a}</p>
+                <p className='text-secondary'>{item.a}</p>
                 </div>
             </div>
             ))}

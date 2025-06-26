@@ -2,13 +2,13 @@ import React from 'react';
 
 const HobbyCat = () => {
     return (
-        <div className="bg-gray-100">
-            <div className="relative px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-20 lg:px-8 lg:py-20">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Hobbies</h2>
+        <div className="">
+            <div className="relative px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl ">
+                <h2 className="text-3xl md:text-4xl font-bold my-8 text-center">Hobbies</h2>
                 <div className="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-secondary rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
-                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full">
                         <svg
                         className="w-8 h-8 text-deep-purple-accent-400"
                         stroke="currentColor"
@@ -31,9 +31,9 @@ const HobbyCat = () => {
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
                 </div>
-                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-secondary rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
-                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full ">
                         <svg
                         className="w-8 h-8 text-deep-purple-accent-400"
                         stroke="currentColor"
@@ -56,9 +56,9 @@ const HobbyCat = () => {
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
                 </div>
-                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-secondary rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
-                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full ">
                         <svg
                         className="w-8 h-8 text-deep-purple-accent-400"
                         stroke="currentColor"
@@ -81,9 +81,9 @@ const HobbyCat = () => {
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
                 </div>
-                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-secondary rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
-                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full ">
                         <svg
                         className="w-8 h-8 text-deep-purple-accent-400"
                         stroke="currentColor"
@@ -106,9 +106,9 @@ const HobbyCat = () => {
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
                 </div>
-                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-secondary rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
-                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full ">
                         <svg
                         className="w-8 h-8 text-deep-purple-accent-400"
                         stroke="currentColor"
@@ -131,9 +131,9 @@ const HobbyCat = () => {
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
                 </div>
-                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-secondary rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
-                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full ">
                         <svg
                         className="w-8 h-8 text-deep-purple-accent-400"
                         stroke="currentColor"
@@ -156,9 +156,9 @@ const HobbyCat = () => {
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
                 </div>
-                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-secondary rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
-                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full ">
                         <svg
                         className="w-8 h-8 text-deep-purple-accent-400"
                         stroke="currentColor"
@@ -181,9 +181,9 @@ const HobbyCat = () => {
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
                 </div>
-                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+                <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-secondary rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
-                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+                    <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full ">
                         <svg
                         className="w-8 h-8 text-deep-purple-accent-400"
                         stroke="currentColor"
