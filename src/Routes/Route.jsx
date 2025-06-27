@@ -70,6 +70,10 @@ export const router = createBrowserRouter([
                 element: <MyProfile/>
             },
             {
+                path: "allGroups",
+                element: <AllGroups></AllGroups>
+            },
+            {
                 path: "createGroup",
                 element: <PrivetRoute><CreateGroup></CreateGroup></PrivetRoute>
             },

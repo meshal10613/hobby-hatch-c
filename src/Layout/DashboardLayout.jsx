@@ -6,6 +6,7 @@ import { RxDashboard } from 'react-icons/rx';
 import { IoCreate } from 'react-icons/io5';
 import { CgProfile } from 'react-icons/cg';
 import { FaUserGroup } from 'react-icons/fa6';
+import { HiMiniUserGroup } from 'react-icons/hi2';
 
 const DashboardLayout = () => {
     const {theme, user} = use(AuthContext);
@@ -78,6 +79,12 @@ const DashboardLayout = () => {
                         <NavLink to="/dashboard/home" onClick={() => setTitle("Dashboard")} style={({ isActive }) => (isActive ? (activeStyle) : undefined)} className={linkClass} >
                             <RxDashboard className="inline-block mr-2"/>
                             Dashboard
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/dashboard/allGroups" onClick={() => setTitle("Dashboard")} style={({ isActive }) => (isActive ? (activeStyle) : undefined)} className={linkClass} >
+                            <HiMiniUserGroup className='inline-block mr-2' />
+                            All Groups
                         </NavLink>
                     </li>
                     <li>

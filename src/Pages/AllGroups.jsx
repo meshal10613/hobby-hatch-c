@@ -26,7 +26,7 @@ const AllGroups = () => {
         .then(data => setIntData(data))
     }, [search, sort]);
     return (
-        <div className='mb-10'>
+        <div className='mb-10 mx-5'>
             <div>
                 <div className='flex items-center justify-between mx-5 md:mx-0'>
                     <div>
