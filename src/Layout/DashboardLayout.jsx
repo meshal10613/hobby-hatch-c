@@ -1,5 +1,5 @@
 import React, { use, useState } from 'react';
-import { FaBoxOpen, FaHome } from 'react-icons/fa';
+import { FaHome } from 'react-icons/fa';
 import { Link, NavLink, Outlet } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { RxDashboard } from 'react-icons/rx';
@@ -84,10 +84,6 @@ const DashboardLayout = () => {
                         <NavLink to="/dashboard/createGroup" onClick={() => setTitle("My Profile")} style={({ isActive }) => (isActive ? activeStyle : undefined)}>
                             <IoCreate className="inline-block mr-2"/>Create Group
                         </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={`/dashboard/myGroups`} onClick={() => setTitle("My Profile")} style={({ isActive }) => (isActive ? activeStyle : undefined)}>
-                        <FaUserGroup className='inline-block mr-2' />My Groups</NavLink>
                     </li>
                     <li>
                         <NavLink to="/dashboard/my-profile" onClick={() => setTitle("My Profile")} style={({ isActive }) => (isActive ? activeStyle : undefined)} >

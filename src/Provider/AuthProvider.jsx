@@ -11,13 +11,19 @@ const AuthProvider = ({children}) => {
     const googleProvider = new GoogleAuthProvider();  
     
     //theme
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
 
     const toggleTheme = () => {
         const newTheme = theme === "light" ? "dark" : "light";
         document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
         setTheme(newTheme);
     };
+
+    useEffect(() => {
+        // This keeps theme synced on mount or when theme state changes
+        document.documentElement.setAttribute("data-theme", theme);
+    }, [theme]);
 
     const SignInUser = (email, password) => {
         setLoading(true);

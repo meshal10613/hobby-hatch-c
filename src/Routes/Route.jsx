@@ -61,7 +61,9 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: 'home',
-                element: <DashboardHome/>
+                element: <DashboardHome/>,
+                hydrateFallbackElement: <Loading/>,
+                loader: () => fetch("https://assignment-10-server-xi-fawn.vercel.app/hobbies?hobby=hobby"),
             },
             {
                 path: "my-profile",
@@ -70,10 +72,6 @@ export const router = createBrowserRouter([
             {
                 path: "createGroup",
                 element: <PrivetRoute><CreateGroup></CreateGroup></PrivetRoute>
-            },
-            {
-                path: "myGroups",
-                element: <PrivetRoute><MyGroups></MyGroups></PrivetRoute>
             },
             {
                 path: "updateGroup/:id",

@@ -52,3 +52,6 @@
     --noise: 0;
 }
 
+.footer-link li a.active{
+    text-decoration: underline;
+}

@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Tooltip } from 'react-tooltip';
+import hobbyImg from '/hobby.png'
 
 const Navbar = () => {
     const {user, theme, toggleTheme} = use(AuthContext);
@@ -38,7 +39,10 @@ const Navbar = () => {
                     {links}
             </ul>
             </div>
-            <Link to='/' className="text-[16px] md:text-3xl font-bold text-primary cursor-pointer">HobbyHatch</Link>
+            <Link to='/' className='flex items-center group cursor-pointer'>
+                <img src={hobbyImg} alt="" className='w-12'/>
+                <Link className="text-[16px] md:text-3xl font-bold text-primary cursor-pointer">HobbyHatch</Link>
+            </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">

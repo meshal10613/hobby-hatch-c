@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Footer = () => {
+    const {user} = use(AuthContext);
     const [email, setEmail] = useState("");
     const handleSubscribe = (e) => {
         e.preventDefault();
@@ -38,12 +40,17 @@ const Footer = () => {
             </aside>
             <nav className='pb-5 md:pb-0 text-accent'>
                 <h6 className="footer-title font-semibold text-xl">Useful Links</h6>
-                <div className="grid grid-flow-col gap-4">
+                <div className="grid grid-flow-col gap-4 footer-link">
                     <ul>
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/allGroups">All Groups</NavLink></li>
-                        <li><NavLink to="/createGroup">Create Group</NavLink></li>
-                        <li><NavLink to="/myGroups">My Groups</NavLink></li>
+                        <li><NavLink to="/about-us">About us</NavLink></li>
+                        <li><NavLink to="/contact">Contact</NavLink></li>
+                        <li><NavLink to="/support">Support</NavLink></li>
+                        {
+                            user && 
+                            <li><NavLink to="/dashboard/home">Dashboard</NavLink></li>
+                        }
                     </ul>
                 </div>
             </nav>

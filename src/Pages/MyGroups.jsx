@@ -1,12 +1,11 @@
-import React, { use, useEffect, useState } from 'react';
+import React, { use, useEffect } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Link } from 'react-router';
 import { MdDeleteForever, MdOutlineSystemUpdateAlt } from 'react-icons/md';
 import Swal from 'sweetalert2';
 
-const MyGroups = () => {
+const MyGroups = ({setUserData, userData}) => {
     const {user} = use(AuthContext);
-    const [userData, setUserData] = useState([]);
 
     useEffect(() => {
         fetch(`https://assignment-10-server-xi-fawn.vercel.app/hobbies?emailParams=${user?.email}`)
